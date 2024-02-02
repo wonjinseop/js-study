@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    /*
+    var i = 1; // begin
+    var total = 0;
+    while (i <=10) { // end
+      total += i;
+      i++; // step
+    }
+    */
+
+    // while: 반복 횟수가 명확하지 않은 경우 많이 사용.
+    // for: 반복 횟수가 명확한 경우 많이 사용.
+
+    var total = 0;
+    for(var i=1; i<=10; i++) {
+      total += i;
+    }
+
+    // 1~200까지의 정수 중 6의 배수이면서 12의 배수는 아닌 수의 개수를 출력.
+
+    var cnt = 0;
+    for(var i=1; i<=200; i++) {
+      if(i % 6 === 0 && i % 12 !== 0) {
+        cnt ++;
+        console.log(i = i);
+      }
+      // if (i % 6 === 0) {
+      //   if(i % 12 === 0) {
+      //   cnt++; }
+      // }
+    }
+    
+
+    console.log(`cnt: ${cnt}`);
+
+    console.log('-------------------------------------------------------');
+
+    // 정수를 하나 입력받아서
+    // 입력받은 정수까지의 팩토리얼 값을 구하세요.
+    // 팩토리얼) 5! -> 5 x 4 x 3 x 2 x 1
+
+    var num = +prompt('정수를 하나 입력하세요.');
+
+    var fac = 1;
+    for(var a=num; a>=1; a--) {
+      fac *=  a
+    }
+
+    console.log(`${num}!: ${fac}`);
+
+  </script>
+
+</body>
+</html>

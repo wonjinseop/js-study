@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    /*
+    - 정수 1개를 입력받아서 해당 점수가 소수(prime number)
+      인지를 판별하면 됩니다.
+    */
+    
+    var num = +prompt('정수를 입력하세요.')
+
+    var pn = 0;
+    
+    for(var i=1; i<=num; i++) {
+      if(num % i === 0) {
+        pn++;
+      }
+    }
+
+    if(pn === 2) {
+      console.log(`${num}은(는) 소수가 맞습니다.`);
+    } else {
+      console.log(`${num}은(는) 소수가 아닙니다.`);
+    }
+
+    console.log('----------------------------------------------');
+
+    for(var j=2; num % j !== 0; j++) {}
+    console.log(`${num}은(는) ${num === j ? '소수입니다.' : '소수가 아닙니다.'}`);
+
+  </script>
+  
+</body>
+</html>
