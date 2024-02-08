@@ -88,9 +88,23 @@
 
 
     // 회원 정보 중에 회원 이름만 전부 모아서 배열에 담아줘.
-    
+    // 매핑
+    function map(callback) {
+      // 특정 프로퍼티를 담을 배열
+      const mappedArry = [];
 
-   
+      for(let user of userList) {
+        mappedArry.push(callback(user));
+      }
+
+      return mappedArry
+    }
+
+    const nameList = map(user => user.userName);
+    console.log(nameList);
+
+    const addressList = map(user => user.address);
+    console.log(addressList);
 
 
 
