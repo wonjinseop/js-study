@@ -58,6 +58,7 @@ function caseDown($icon) {
 };
 
 function correntAnswer($icon) {
+  const $numbers = document.getElementById('numbers');
   // 1. #finish 박스에 class 'show' 부여
   document.getElementById('finish').classList.add('show');
 
@@ -65,7 +66,7 @@ function correntAnswer($icon) {
   $numbers.onclick = null;
 
   // 3. 사용자가 선택한 아이콘에 id 'move' 추가
-  // $numbets.$.setAttribute('id', 'move')
+  $icon.setAttribute('id', 'move')
   
 }
 
