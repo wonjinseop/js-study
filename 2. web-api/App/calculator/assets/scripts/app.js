@@ -18,6 +18,11 @@ const calculate = type => {
   const originalResult = currentResult;
   const enterdNumber = getUserNumberInut();
 
+  if(!enterdNumber && enterdNumber !== 0) {
+    alert('문제 발생!');
+    return;
+  }
+
   let mark;
   if(type === 'add') {
     mark = '+';
@@ -29,6 +34,10 @@ const calculate = type => {
     mark = 'x';
     currentResult *= enterdNumber;
   } else {
+    if(enterdNumber === 0) {
+      alert('0으로 나눌수 없습니다.');
+      return;
+    }
     mark = '/';
     currentResult /= enterdNumber;
   }
@@ -75,21 +84,10 @@ const renderToLog = ({operation: mark, prevResult, number, result}) => {
 
 
 // 더하기 버튼 이벤트 핸들러
-const addHandler = () => {
-  calculate('add')
-};
-
-const subHandler = () => {
-  calculate('sub');
-};
-
-const multiHandler = () => {
-  calculate('multi');
-};
-
-const divideHandler = () => {
-  calculate('divide');
-};
+const addHandler = () => calculate('add');
+const subHandler = () => calculate('sub');
+const multiHandler = () => calculate('multi');
+const divideHandler = () => calculate('divide');
 
 
 // ========== 이벤트 핸들러 바인딩 ========== //
